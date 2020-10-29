@@ -24,6 +24,7 @@ func (g *Greeter) Hello(ctx context.Context, rep *pb.HelloRequest, rsp *pb.Hello
 	//fmt.Printf()
 	return nil
 }
+
 func main() {
 	//新建一个服务
 	service := micro.NewService(micro.Name("greeter"),
@@ -35,6 +36,7 @@ func main() {
 		fmt.Println("注册服务出现了问题...", err)
 		return
 	}
+
 	//运行服务
 	if err := service.Run(); err != nil {
 		fmt.Println("服务运行出现了错误：", err)
